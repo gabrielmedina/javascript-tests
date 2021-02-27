@@ -1,8 +1,8 @@
 import Dinero from 'dinero.js'
 
-const Money = Dinero
+Dinero.defaultCurrency = 'BRL'
+Dinero.defaultPrecision = 2
 
-Money.defaultCurrency = 'BRL'
-Money.defaultPrecision = 2
-
-export default Money
+export const Money = (value) => {
+  return Dinero({ amount: value })
+}

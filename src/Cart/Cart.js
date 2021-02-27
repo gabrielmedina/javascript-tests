@@ -1,5 +1,5 @@
 import { find, remove } from 'lodash'
-import Money from '../utils/Money'
+import { Money } from '../utils/Money'
 export default class Cart {
   items = []
 
@@ -19,8 +19,8 @@ export default class Cart {
 
   getTotal() {
     return this.items.reduce((acc, item) => {
-      return acc + item.quantity * item.product.price
-    }, 0)
+      return acc.add(Money(item.quantity * item.product.price))
+    }, Money(0))
   }
 
   getSummary() {

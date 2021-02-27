@@ -20,7 +20,7 @@ describe('Cart', () => {
         quantity: 2,
       })
 
-      expect(cart.getTotal()).toEqual(10776)
+      expect(cart.getTotal().getAmount()).toEqual(10776)
     })
 
     it('should ensure no more than on product exists at a time', () => {
@@ -35,7 +35,7 @@ describe('Cart', () => {
       })
 
       expect(cart.items.length === 1).toEqual(true)
-      expect(cart.getTotal()).toEqual(5388)
+      expect(cart.getTotal().getAmount()).toEqual(5388)
     })
 
     it('should update total when a product gets included and then removed', () => {
@@ -49,11 +49,11 @@ describe('Cart', () => {
         quantity: 1,
       })
 
-      expect(cart.getTotal()).toEqual(14052)
+      expect(cart.getTotal().getAmount()).toEqual(14052)
 
       cart.remove(product)
 
-      expect(cart.getTotal()).toEqual(3276)
+      expect(cart.getTotal().getAmount()).toEqual(3276)
     })
   })
 
@@ -70,7 +70,7 @@ describe('Cart', () => {
       })
 
       expect(cart.getSummary()).toMatchSnapshot()
-      expect(cart.getTotal()).toBeGreaterThan(0)
+      expect(cart.getTotal().getAmount()).toBeGreaterThan(0)
     })
   })
   
@@ -83,7 +83,7 @@ describe('Cart', () => {
   
       cart.getCheckout()
   
-      expect(cart.getTotal()).toEqual(0)
+      expect(cart.getTotal().getAmount()).toEqual(0)
     })
   })
 })

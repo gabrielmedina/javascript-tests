@@ -18,6 +18,10 @@ Object {
       "quantity": 2,
     },
   ],
-  "total": 17328,
+  "total": Object {
+    "amount": 17328,
+    "currency": "BRL",
+    "precision": 2,
+  },
 }
 `;
