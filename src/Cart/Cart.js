@@ -1,5 +1,5 @@
 import { find, remove } from 'lodash'
-
+import Money from '../utils/Money'
 export default class Cart {
   items = []
 
