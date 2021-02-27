@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart getSummary() should return an object with the total and the list of items when getSummary() is called 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 5388,
+        "title": "A cool product",
+      },
+      "quantity": 2,
+    },
+    Object {
+      "product": Object {
+        "price": 3276,
+        "title": "A cool product",
+      },
+      "quantity": 2,
+    },
+  ],
+  "total": 17328,
+}
+`;
